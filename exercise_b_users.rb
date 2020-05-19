@@ -69,6 +69,9 @@ users ["Erik"][:lottery_numbers]
 # 4. Get the species of Avril's pet Monty
 users ["Avril"][:pets][0][:species]
 
+#OR
+#Avrils species = {users[“Avril”][:pets].find{|h| h[:name] == “monty”}[:species]}
+
 
 # 5. Get the smallest of Erik's lottery numbers
 users ["Erik"][:lottery_numbers].min
@@ -89,6 +92,8 @@ users ["Erik"][:home_town] = "Edinburgh"
 # 9. Add a pet dog to Erik called "Fluffy"
 users ["Erik"][:pets][3] = {:name => "Fluffy", :species => "dog"}
 
+# OR
+#users ["Erik"][:pets].push(:name => "Fluffy", :species => "dog")
 
 # 10. Add another person to the users hash
 users ["Crug"] = {:twitter => "crugbarat", :lottery_numbers => [6, 10, 11, 16, 18, 27], :home_town => "Glasgow", :pets => [{:name => "Albert", :species => "cat"}]}
